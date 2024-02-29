@@ -1,7 +1,7 @@
 # Message Queue | Job Queue | Redis Queue In Python with on_success callbacks
-In a Python Flask server if there is an endpoint that's taking too much time then we need that heavy task to be delegated to a separate Job queue, where dedicated Job workers will take their time executing these time-taking jobs one by one without disturbing the main server.
+In a Python Flask server if there is an endpoint that's taking too much time then we need that heavy task delegated to a separate Job queue, where dedicated Job workers will take their time executing these time-taking jobs one by one without disturbing the main server.
 
-**NOTE**: Once those functions are executed we can handle the results of those functions in a success callback. 
+##### **NOTE**: Once these time-taking functions are executed we can handle the results of those functions in a success callback. 
 
 All the details about Redis Queue can be found on their official documentation page 
 https://python-rq.org/docs/
@@ -20,9 +20,9 @@ Sample /heavy-task GET request
 Response:
 ```json
 {
-  "job_id": "d3586ca1-fff1-43a5-b3ba-1faf08ee20e3",
+  "job_id": "d90272c6-f02c-4c8b-9496-536ea5dd2888",
   "job_status": "queued",
-  "message": "Job is queued and result can be collected by a GET request at '/jobs/d3586ca1-fff1-43a5-b3ba-1faf08ee20e3' once the job is completed",
+  "message": "Job is queued and result can be collected by a GET request at '/jobs/d90272c6-f02c-4c8b-9496-536ea5dd2888' once the job is completed",
   "query_arg1": "value1",
   "query_arg2": "value2",
   "status": 200
@@ -32,7 +32,7 @@ Response:
 
 Check Job status in the queue
 HTTP GET for jobs
-`/jobs/d3586ca1-fff1-43a5-b3ba-1faf08ee20e3`
+`/jobs/d90272c6-f02c-4c8b-9496-536ea5dd2888`
 
 Response:
 ```json
